@@ -3,13 +3,14 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-latest
+    ddefaults:
+      run:
+        working-directory: basic-react-app
     steps:
       - name: Download files
         uses: actions/checkout@v6
       - name: Install nodejs
         uses: actions/setup-node@v6
-      - name: Move to code directory
-        run: cd basic-react-app && ls
       - name: Install dependencies
         run: npm install
       - name: Run unit tests
