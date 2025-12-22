@@ -1,5 +1,5 @@
 name: gha-basic-building-block-ass-workflow2
-on: issues
+on: [issues, workflow_dispatch]
 jobs:
   report-issue:
     runs-on: ubuntu-latest
