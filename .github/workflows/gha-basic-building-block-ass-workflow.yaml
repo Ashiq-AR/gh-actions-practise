@@ -1,0 +1,41 @@
+name: gha-basic-building-blocks-ass-workflow
+on: push
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: gha-basic-building-blocks-assignment
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+      - name: Install dependencies
+        run: npm ci
+      - name: Run lint
+        run: npm run lint
+  test:
+    needs: lint
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: gha-basic-building-blocks-assignment
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+      - name: Install dependencies
+        run: npm ci
+      - name: Run test
+        run: npm run test
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: gha-basic-building-blocks-assignment
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+      - name: Install dependencies
+        run: npm ci
+      - name: Run build
+        run: npm run build
