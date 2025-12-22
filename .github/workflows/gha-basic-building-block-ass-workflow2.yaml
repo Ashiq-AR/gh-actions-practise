@@ -1,0 +1,8 @@
+name: gha-basic-building-block-ass-workflow2
+on: issues
+jobs:
+  report-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report issue
+        run: echo "${{ toJSON(github) }}"
