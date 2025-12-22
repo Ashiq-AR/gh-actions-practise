@@ -9,7 +9,7 @@ jobs:
       - name: Install nodejs
         uses: actions/setup-node@v6
       - name: Move to code directory
-        run: cd basic-react-app
+        run: cd basic-react-app && ls
       - name: Install dependencies
         run: npm install
       - name: Run unit tests
