@@ -34,20 +34,19 @@ jobs:
       - name: Archive artifact
         uses: actions/upload-artifact@v6
         with:
-          name: dist-files
+          name: build-files
           path: |
-            dist
-            package.json
+            basic-react-app/build
+            basic-react-app/package.json
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: basic-react-app
     steps:
       - name: Deploy
         run: echo "Deploying..."
-      - name: Display current directory
-        run: pwd
+      - name: Download artifact
+        uses: actions/download-artifact@v6
+        with:
+          name: build-files
       - name: List files in current directory
         run: ls -la
