@@ -11,5 +11,6 @@ runs:
         key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
     - name: Install dependencies
       if: steps.cache.outputs.cache-hit != 'true'
+      working-directory: basic-react-app
       run: npm ci
       shell: bash
