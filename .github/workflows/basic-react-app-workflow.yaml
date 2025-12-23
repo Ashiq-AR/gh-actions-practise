@@ -1,5 +1,5 @@
 name: basic-react-app-workflow
-on: push
+on: workflow_dispatch
 jobs:
   test:
     runs-on: ubuntu-latest
