@@ -36,7 +36,7 @@ jobs:
         with:
           name: build-files
           path: |
-            basic-react-app/build
+            basic-react-app/dist
             basic-react-app/package.json
   deploy:
     needs: build
