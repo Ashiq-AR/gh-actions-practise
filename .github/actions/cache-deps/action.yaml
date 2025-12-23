@@ -1,0 +1,17 @@
+name: cache-deps
+description: A composite action for caching dependencies
+runs:
+  using: "composite"
+  steps:
+    - name: Cache dependencies
+      working-directory: basic-react-app
+      id: cache
+      uses: actions/cache@v3
+      with:
+        path: node_modules
+        key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
+    - name: Install dependencies
+      if: steps.cache.outputs.cache-hit != 'true'
+      working-directory: basic-react-app
+      run: npm ci
+      shell: bash
