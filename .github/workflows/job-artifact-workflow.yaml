@@ -37,3 +37,7 @@ jobs:
     steps:
       - name: Deploy
         run: echo "Deploying..."
+      - name: Display current directory
+        run: pwd
+      - name: List files in current directory
+        run: ls -la
