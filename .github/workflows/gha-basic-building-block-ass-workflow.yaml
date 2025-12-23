@@ -1,11 +1,11 @@
 name: gha-basic-building-blocks-ass-workflow
-on: push
+on: workflow_dispatch
 jobs:
   lint:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: gha-basic-building-blocks-assignment
+        working-directory: basic-react-app
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: gha-basic-building-blocks-assignment
+        working-directory: basic-react-app
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: gha-basic-building-blocks-assignment
+        working-directory: basic-react-app
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
